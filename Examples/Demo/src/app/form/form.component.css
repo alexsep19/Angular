@@ -1,0 +1,12 @@
+ .nav-tabs > li:not(.active) > a {
+     cursor: pointer;
+ }
+ 
+ .nav-tabs > li.active > a {    
+   border-right-color:  #337ab7;
+   border-right-width: 3px;
+}
+
+.nav-tabs > li:focus {
+    outline-color: transparent;
+}

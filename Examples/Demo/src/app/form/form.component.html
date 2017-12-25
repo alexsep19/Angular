@@ -1,0 +1,18 @@
+<h2 class="well well-sm text-center">Form</h2> 
+<ul class="nav nav-tabs">
+  <li routerLink="./" 
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }">
+    <a>Template-driven</a>
+  </li>
+  <li routerLink="./reactive" 
+      routerLinkActive="active">
+    <a>Reactive</a>
+  </li>
+  <li routerLink="./dynamic" 
+      routerLinkActive="active">
+    <a>Dynamic</a>
+  </li>
+</ul>
+
+<router-outlet></router-outlet>

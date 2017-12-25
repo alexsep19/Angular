@@ -1,0 +1,69 @@
+<div class="modal-dialog">
+        <form [formGroup]="dlgForm"
+              (ngSubmit)="ok()"
+              (keydown.enter)="$event.preventDefault()"
+              novalidate> 
+           <div class="modal-content">
+              <div class="modal-header">
+                 <button type="button" 
+                         class="close" 
+                         (click)="cancel()">
+                         &times;
+                 </button>
+                 <h4 class="modal-title">{{title || 'Диалог'}}</h4>
+              </div>
+              <div class="modal-body">
+                 <div class="panel panel-default">
+                    <div class="panel-heading">{{dictTitle}}</div>
+                      <div class="panel-body">
+                         <div class="form-group">
+                            <label for="code">Код:</label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="code" 
+                                   formControlName="code"                             
+                                   placeholder="Введите код">
+                         </div>
+                         <div class="form-group">
+                            <label for="strcode">Символ:</label>
+                            <input type="text" 
+                                   class="form-control" 
+                                   id="strcode" 
+                                   formControlName="strcode" 
+                                   placeholder="Введите символ">
+                         </div>
+                         <div class="form-group">
+                            <label for="name">Наименование:</label>
+                            <input type="text" 
+                                   class="form-control" 
+                                   id="name" 
+                                   formControlName="name" 
+                                   placeholder="Введите наименование">
+                         </div>
+                         <div class="form-group">
+                            <label for="country">Страна:</label>
+                            <input type="text" 
+                                   class="form-control" 
+                                   id="country"
+                                   formControlName="country" 
+                                   placeholder="Введите страну">
+                         </div>
+                     </div>               
+                 </div>  
+             </div>
+             <div class="modal-footer">
+                <button type="submit" 
+                        class="btn btn-primary" 
+                        *ngIf="action !== DlgActionEnum.View"
+                        [disabled]="dlgForm.invalid">
+                        {{okButtonText || 'OK'}}
+                </button>
+                <button type="button" 
+                        class="btn btn-default" 
+                        (click)="cancel()">
+                        Закрыть
+                </button>       
+             </div>
+           </div>
+        </form>   
+     </div>

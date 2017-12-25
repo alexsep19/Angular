@@ -1,0 +1,5 @@
+@import "../template-driven/template-driven.component.css";
+
+.ng-valid:not(form) {
+    border-left: 3px solid #42A948;
+}

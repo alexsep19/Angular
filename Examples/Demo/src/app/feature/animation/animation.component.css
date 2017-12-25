@@ -1,0 +1,13 @@
+.panel-heading {
+    line-height:32px;
+}
+
+.button-panel {
+    margin: 10px;
+}
+
+#dialog {
+    width: 50%;
+    height: 250px;
+    position: relative;   
+}

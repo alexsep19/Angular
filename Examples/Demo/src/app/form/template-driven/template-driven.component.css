@@ -1,0 +1,34 @@
+.ng-valid[required], .ng-valid.required {
+    border-left: 3px solid #42A948;
+}
+  
+.ng-invalid:not(form) {
+    border-left: 3px solid #a94442; 
+}
+
+.container {
+    margin-top: 40px;
+}
+
+.panel-heading {
+    padding: 5px 15px;
+}
+
+.panel-footer {
+	padding: 1px 15px;
+	color: #A0A0A0;
+}
+
+.profile-img {
+	width: 96px;
+	height: 96px;
+	margin: 0 auto 10px;
+	display: block;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+}
+
+a:hover {
+  cursor: pointer;
+}

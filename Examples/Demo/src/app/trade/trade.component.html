@@ -1,0 +1,48 @@
+<div class="container">
+
+    <div class="row">
+        <p>Available stocks for demo: {{sample.toString()}}</p>
+        <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="symbols" placeholder="Comma separated list of stocks to watch..." />
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button" (click)="add()">
+                    <span class="glyphicon glyphicon-eye-open"></span> Watch
+                </button>
+            </span>
+        </div>
+    </div>
+
+    <div className="row">
+        <table className="table-hover">
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Open</th>
+                    <th>Last</th>
+                    <th>Change</th>
+                    <th>High</th>
+                    <th>Low</th>
+                    <th>Unwatch</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let stock of stocks">
+                    <td>{{stock.symbol}}</td>
+                    <td>{{stock.open}}</td>
+                    <td [ngClass]="{lastPositive: stock.change_idx > -1 && stock.change > 0, lastNegative: stock.change_idx > -1 && stock.change < 0}">{{stock.last}}</td>
+                    <td [ngClass]="{changePositive: stock.change > 0, changeNegative: stock.change < 0}">{{stock.change}}
+                        <span class="glyphicon" [ngClass]="{'glyphicon-triangle-top': stock.change > 0, 'glyphicon-triangle-bottom': stock.change < 0}"></span>
+                    </td>
+                    <td>{{stock.high}}</td>
+                    <td>{{stock.low}}</td>
+                    <td>
+                        <button type="button" class="btn btn-default btn-sm" (click)='del(stock)'>
+                            <span class="glyphicon glyphicon-eye-close"></span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

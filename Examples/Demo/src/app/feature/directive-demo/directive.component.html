@@ -1,0 +1,56 @@
+<div>
+    <h2 class="well well-sm text-center">Directives</h2> 
+
+    <button type="button"
+            class="btn btn-success"
+            (click)="load()">
+            Load
+    </button>
+    
+    <br><br>
+    <ng-template #loading>Waiting for loading data... </ng-template>
+    <div class="panel panel-primary" *ngIf ="products | async as productList; else loading">
+        <div class="panel-heading text-center">Products</div>
+        <div class="panel-body">  
+             
+           <p>The following products are 
+              <span marker>currently</span> available on our store.
+               <!--
+                    <span marker color='#3a87ad'>
+                    <span marker [color]="'green'">
+                -->      
+           </p>
+        </div>
+
+        <div class="list-group"             
+             *ngFor="let product of productList"
+             [ngSwitch]="true">
+            <span class="list-group-item">{{product.name}}
+              <span class="badge"
+                    *ngSwitchCase="product.quant <= 10"
+                    [ngClass]="{badgeError: true}">
+                    {{product.quant}}
+              </span>
+              <span class="badge"
+                    *ngSwitchCase="product.quant > 10 && product.quant <= 50"
+                    [ngClass]="{badgeWarning: true}">
+                   {{product.quant}}
+              </span>
+              <span class="badge"
+                    *ngSwitchCase="product.quant > 50 && product.quant <= 100"
+                    [ngClass]="{badgeInfo: true}">
+                   {{product.quant}}
+              </span>  
+              <span class="badge"
+                    *ngSwitchCase="product.quant > 100"
+                    [ngClass]="{badgeSuccess: true}">
+                    {{product.quant}}
+              </span>      
+            </span>  
+          </div>                      
+    </div>
+    
+ </div>  
+ 
+ 
+

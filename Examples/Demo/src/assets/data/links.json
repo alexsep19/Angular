@@ -1,0 +1,42 @@
+ [
+        {
+            "title": "Node.js",
+            "url": "https://nodejs.org"
+        },
+        {
+            "title": "npm",
+            "url": "https://www.npmjs.com"
+        },
+        {
+            "title": "Angular",
+            "url": "https://angular.io"
+        },
+        {
+            "title": "Angular CLI",
+            "url": "https://cli.angular.io"
+        },
+        {
+            "title": "Browser Support & Polyfills",
+            "url": "https://angular.io/guide/browser-support"
+        },
+        {
+            "title": "TypeScript",
+            "url": "https://www.typescriptlang.org"
+        },
+        {
+            "title": "Ionic",
+            "url": "https://ionicframework.com"
+        },
+        {
+            "title": "NativeScript",
+            "url": "https://docs.nativescript.org"
+        },
+        {
+            "title": "Electron",
+            "url": "https://electron.atom.io"
+        },
+        {
+            "title": "Visual Studio Code",
+            "url": "https://code.visualstudio.com"
+        }              
+    ]

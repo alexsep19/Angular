@@ -1,0 +1,187 @@
+<div>
+   <h2 class="well well-sm text-center">Built-in pipes</h2> 
+    
+  <table class="table table-bordered">
+    <thead>
+       <tr class="info">
+         <th>Source</th>
+         <th>Pipe</th>
+         <th>Result</th>
+       </tr>
+     </thead>
+     <tbody>
+       <!--DatePipe-->
+       <tr>
+         <td>{{now}}</td>
+         <td>date: "dd.MM.yyyy"</td>
+         <td>{{now | date: "dd.MM.yyyy"}}</td>
+       </tr>
+       <tr>
+          <td>{{now}}</td>
+          <td>date: "dd.MM.yyyy HH:mm:ss"</td>
+          <td>{{now | date: "dd.MM.yyyy HH:mm:ss"}}</td>
+        </tr>
+       <tr>
+         <td>{{today}}</td>
+         <td>date</td>
+         <td>{{today | date}}</td>
+       </tr>
+       <!--SlicePipe-->
+       <tr>
+         <td>{{str}}</td>
+         <td>slice: 6</td>
+         <td>{{str | slice: 6}}</td>
+       </tr>
+       <tr>
+         <td>{{str}}</td>
+         <td>slice: 0 : 5</td>
+         <td>{{str | slice: 0 : 5}}</td>
+       </tr>
+       <tr>
+         <td>{{numbers}}</td>
+         <td>slice: 0 : 1</td>
+         <td>{{numbers | slice: 0 : 1}}</td>
+       </tr>
+       <tr>
+         <td>{{numbers}}</td>
+         <td>slice: 3</td>
+         <td>{{numbers | slice: 3}}</td>
+       </tr>
+       <!--UpperCasePipe-->
+       <tr>
+         <td>{{str}}</td>
+         <td>uppercase</td>
+         <td>{{str | uppercase}}</td>
+       </tr>
+       <!--LowerCasePipe-->
+       <tr>
+         <td>{{str}}</td>
+         <td>lowercase</td>
+         <td>{{str | lowercase}}</td>
+       </tr>
+        <!--TitleCasePipe-->
+        <tr>
+           <td>{{str}}</td>
+           <td>titlecase</td>
+           <td>{{str | titlecase}}</td>
+        </tr>
+       <!--DecimalPipe-->
+       <tr>
+         <td>{{value}}</td>
+         <td>number</td>
+         <td>{{value | number}}</td>
+       </tr>
+       <tr>
+         <td>{{value}}</td>
+         <td>number: '4.4-5'</td>
+         <td>{{value | number: '4.4-5'}}</td>
+       </tr>
+       <!--PercentPipe-->
+       <tr>
+         <td>{{value2}}</td>
+         <td>percent</td>
+         <td>{{value2 | percent}}</td>
+       </tr>
+       <tr>
+         <td>{{value}}</td>
+         <td>percent: '4.4-5'</td>
+         <td>{{value | percent: '4.4-5'}}</td>
+       </tr>
+       <!--CurrencyPipe-->
+       <tr>
+         <td>{{cost}}</td>
+         <td>currency</td>
+         <td>{{cost | currency}}</td>
+       </tr>
+       <tr>
+         <td>{{cost}}</td>
+         <td>currency: 'USD'</td>
+         <td>{{cost | currency: 'USD'}}</td>
+       </tr>       
+       <tr>
+         <td>{{cost}}</td>
+         <td>currency: 'USD': 'code'</td>
+         <td>{{cost | currency: 'USD': 'code'}}</td>
+       </tr>
+       <tr>
+         <td>{{cost}}</td>
+         <td>currency: 'USD': 'symbol': '3.3-5'</td>
+         <td>{{cost | currency: 'USD': 'symbol': '3.3-5'}}</td>
+       </tr>
+       <!--JsonPipe-->
+       <tr>
+         <td>{{object}}</td>
+         <td>json</td>
+         <td>{{object | json}}</td>
+       </tr>
+       <!--AsyncPipe-->
+       <tr>
+         <td>Live Time</td>
+         <td>async</td>         
+         <td>{{time | async | date: "HH:mm:ss"}}</td> <!--chaining-->
+       </tr>
+
+     </tbody>
+  </table> 
+
+  <h2 class="well well-sm text-center">Custom pipes</h2> 
+  <table class="table table-bordered">
+    <thead>
+       <tr class="info">
+         <th>Source</th>
+         <th>Pipe</th>
+         <th>Result</th>
+       </tr>
+    </thead>
+    <tbody>
+       <!--Custom Pipe-->
+      <tr>
+        <td>*</td>
+        <td>repeat</td>
+        <td>{{'*' | repeat}}</td>
+      </tr>
+      <tr>
+        <td>*</td>
+        <td>repeat: 20</td>
+        <td>{{'*' | repeat: 20}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class="well well-sm text-center">Pure vs Impure pipes</h2> 
+  <form  class="form-inline" (keydown.enter)="$event.preventDefault()">
+    <div class="form-group">       
+       <input type="text" 
+              class="form-control" 
+              placeholder="enter text"
+              #val>
+       <button type="button" 
+               class="btn btn-success" 
+               (click)="result.push(val.value)">
+               Add
+       </button>      
+    </div>
+  </form>
+  
+  <br>
+  <table class="table table-bordered">
+    <thead>
+      <tr class="info">       
+        <th>Pipe</th>
+        <th>Result</th>
+      </tr>      
+    </thead>
+    <tbody>
+       <tr>
+         <td>Pure</td>
+         <td>{{result | pureJoin }}</td>  <!-- не добавляет значения. pure pipe -->
+       </tr>
+       <tr>
+        <td>Impure</td>
+        <td>{{result | impureJoin }}</td>  
+    </tbody>
+  </table>
+ 
+  <br>
+  <h6><a target="_blank" rel="noopener" href="https://angular.io/guide/pipes">Pipes Overview</a></h6>   
+</div>

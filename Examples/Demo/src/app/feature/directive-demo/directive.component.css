@@ -1,0 +1,15 @@
+.badgeError {
+    background-color: #b94a48;
+}
+
+.badgeWarning {
+    background-color: #f89406;
+}
+
+.badgeSuccess {
+    background-color: #468847;
+}
+
+.badgeInfo {
+    background-color: #3a87ad;
+}

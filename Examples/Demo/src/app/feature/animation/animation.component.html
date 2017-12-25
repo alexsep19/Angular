@@ -1,0 +1,26 @@
+<div>
+   <h2 class="well well-sm text-center">Animation</h2> 
+   <div class="button-panel">
+     <button type="button"
+             class="btn btn-success"
+             [disabled]="state==='show'"
+             (click)='show()'>
+             Show
+     </button>
+   </div>
+
+   <div id="dialog" 
+        class="panel panel-primary"
+        [@slide]="state">
+    <div class="panel-heading clearfix">Panel Heading
+      <button type="button" 
+              class="btn btn-danger pull-right"
+              (click)="hide()">
+              &times;
+      </button>
+     
+    </div>
+    <div class="panel-body">Panel Content</div>
+  </div>
+
+</div>  

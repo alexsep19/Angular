@@ -1,0 +1,49 @@
+/* You can add global styles to this file, and also import other style files */
+
+/*ngx-datatable*/
+@import '~@swimlane/ngx-datatable/release/index.css';
+@import '~@swimlane/ngx-datatable/release/themes/bootstrap.css';
+@import '~@swimlane/ngx-datatable/release/assets/icons.css';
+
+.ngx-datatable.bootstrap
+.datatable-header 
+.datatable-header-cell {
+  background-color: #337ab7;
+  color: #fff;
+  border-bottom: 1px solid #1a4263;
+}
+.ngx-datatable.bootstrap .datatable-body .datatable-body-row {
+  border: 1px solid #d1d4d7;
+}
+ 
+.ngx-datatable.bootstrap .datatable-body .datatable-body-row.active {
+  background-color: #525455;
+  color: #FFF;
+}
+
+/*Loader*/
+.loader {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid blue;
+    border-right: 16px solid green;
+    border-bottom: 16px solid red;
+    border-left: 16px solid yellow;
+    width: 100px;
+    height: 100px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

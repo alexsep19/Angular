@@ -1,0 +1,24 @@
+{
+    "products": [
+        {
+            "name": "apple",
+            "quant": 5
+        },
+        {
+            "name": "lemon",
+            "quant": 5
+        },
+        {
+            "name": "mango",
+            "quant": 5
+        },
+        {
+            "name": "apricot",
+            "quant": 5
+        },
+        {
+            "name": "kiwi",
+            "quant": 5
+        }
+    ]
+}

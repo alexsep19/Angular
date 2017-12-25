@@ -1,0 +1,87 @@
+<!--Loading-->
+<ng4-loading-spinner> </ng4-loading-spinner>
+
+<main role="main" class="container">
+    <div class="row">
+      
+      <div class="col-12 col-md-10">  
+        <div class="jumbotron">
+            <img class="pull-right header-img"  
+                 *ngIf="!isDevMode" src="assets/images/love_angular.png"         
+                 [@heartBeat]="state" (@heartBeat.done)="onEnd($event)">
+            <h1 class="text-center">{{header}}</h1>       
+        </div>
+        <div class="row">
+          <div class="col-6 col-md-12">
+            <router-outlet></router-outlet>
+          </div>                                
+        </div>
+      </div>
+  
+      <div class="col-6 col-md-2">
+        <div class="list-group">
+          <a class="list-group-item" 
+             routerLink=""
+             routerLinkActive="active" 
+             [routerLinkActiveOptions]="{exact: true}">
+             Architecture
+          </a>
+          <a class="list-group-item" 
+             routerLink="/cli" 
+             routerLinkActive="active">
+             Angular CLI
+          </a>    
+          <a class="list-group-item" 
+             routerLink="/pipe" 
+             routerLinkActive="active">
+             Pipes
+          </a>   
+          <a class="list-group-item" 
+             routerLink="/directive" 
+             routerLinkActive="active">
+             Directive
+          </a> 
+          <a class="list-group-item" 
+             routerLink="/animation" 
+             routerLinkActive="active">
+             Animation
+          </a> 
+          <a class="list-group-item" 
+             routerLink="/form" 
+             routerLinkActive="active">
+             Form
+          </a>   
+          <a class="list-group-item" 
+          routerLink="/crud" 
+          routerLinkActive="active">
+          CRUD
+          </a>   
+          <a class="list-group-item" 
+          routerLink="/trade" 
+          routerLinkActive="active">
+          Socket
+          </a>                       
+          <a class="list-group-item" 
+             routerLink="/link" 
+             routerLinkActive="active">
+             Links
+          </a>                      
+        </div>
+      </div>
+  
+    </div>
+  
+    <hr>
+  
+  </main>
+  
+  <footer class="container">
+     <p class="text-center text-muted">
+       <em>Angular</em>Demo &copy; {{footer}}
+         <a href="http://www.rbtechnologies.ru" target="_blank">www.rbtechnologies.ru</a>                 
+     </p>             
+  </footer>
+  
+  <!--Notification-->
+  <simple-notifications [options]="options"></simple-notifications>
+  
